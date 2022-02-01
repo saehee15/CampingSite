@@ -1,12 +1,23 @@
 <template>
-    <Header />
-    <h1>Tent</h1>
+  <div class="section">
+    <Items />
+    <Order />
+  </div>
 </template>
 <script>
-import Header from '~/components/Header.vue'
+import Items from "~/components/Items";
+import Order from "~/components/Order";
 export default {
-  components:{
-    Header
-  }
-}
+  components: {
+    Items,
+    Order,
+  },
+};
 </script>
+<style lang="scss" scoped>
+.section {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 0 30px 0;
+}
+</style>

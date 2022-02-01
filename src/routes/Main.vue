@@ -1,17 +1,11 @@
 <template>
-    <Header />
-    <Slider />
-    <Footer />
+  <Slider />
 </template>
 <script>
-import Header from '~/components/Header.vue'
-import Slider from '~/components/Slider.vue'
-import Footer from '~/components/Footer.vue'
+import Slider from "~/components/Slider.vue";
 export default {
-  components:{
-    Header,
+  components: {
     Slider,
-    Footer
-  }
-}
+  },
+};
 </script>

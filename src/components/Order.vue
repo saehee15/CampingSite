@@ -1,0 +1,3 @@
+<template>
+  <div class="card" style="width: 20rem"></div>
+</template>
