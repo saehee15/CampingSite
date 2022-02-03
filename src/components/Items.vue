@@ -1,80 +1,52 @@
 <template>
-  <div class="items">
-    <div class="card" style="width: 20rem">
-      <img src="../assets/img/tent/tent1.png" class="card-img-top" alt="tent" />
-      <div class="card-body">
-        <div class="text">
-          <h5 class="card-title">{{ this.name }}</h5>
-          <p class="card-text">{{ this.merit }}</p>
-        </div>
-        <div class="footer">
-          <p class="price">{{ this.price }}</p>
-          <button type="button" class="btn btn-outline-success">
-            <span class="plus">+</span>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="card" style="width: 20rem">
-      <img src="../assets/img/tent/tent1.png" class="card-img-top" alt="tent" />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <p class="price">￦249,000</p>
-        <a href="#" class="btn btn-outline-success">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 20rem">
-      <img src="../assets/img/tent/tent1.png" class="card-img-top" alt="tent" />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <p class="price">￦249,000</p>
-        <a href="#" class="btn btn-outline-success">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card" style="width: 20rem">
-      <img src="../assets/img/tent/tent1.png" class="card-img-top" alt="tent" />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <p class="price">￦249,000</p>
-        <a href="#" class="btn btn-outline-success">Go somewhere</a>
+  <div
+    class="card"
+    style="width: 20rem"
+    v-for="(item, id) in products.tent"
+    :key="id"
+  >
+    <img src="../assets/img/tent/tent1.png" class="card-img-top" alt="tent" />
+    <div class="card-body">
+      <h5 class="card-title">{{ item.name }}</h5>
+      <p class="card-text">
+        {{ item.merit }}
+      </p>
+      <div class="footer">
+        <p class="price">{{ item.price }}</p>
+        <button type="button" class="btn btn-outline-success">
+          <span class="plus" @click="addItem">+</span>
+        </button>
       </div>
     </div>
   </div>
 </template>
 <script>
-import products from "~/assets/data/products.json";
-const data = products;
 export default {
   data() {
-    return [
-      (this.name = data.name),
-      (this.price = data.price),
-      (this.merit = data.merit),
-    ];
+    return {
+      products: {
+        tent: [],
+      },
+    };
+  },
+  created() {
+    this.fetchProducts();
+  },
+  methods: {
+    async fetchProducts() {
+      const result = await import(`~/public/data/products.json`);
+      const { tent } = result.default;
+      this.products = { tent };
+      console.log(tent);
+    },
+
+    addItem() {},
   },
 };
 </script>
 <style lang="scss" scoped>
-.items {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-
-  .card {
-    margin: 0 10px 0 10px;
-  }
+.card {
+  margin: 0 10px 0 10px;
 }
 .card-body {
   display: flex;

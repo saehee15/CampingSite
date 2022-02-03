@@ -17,7 +17,7 @@ export default {
 <style lang="scss" scoped>
 .section {
   display: flex;
-  justify-content: space-evenly;
-  margin: 30px 0 30px 0;
+  justify-content: center;
+  margin: 30px 0px 30px 0;
 }
 </style>
