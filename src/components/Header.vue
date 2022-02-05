@@ -25,31 +25,31 @@ export default {
       navigations: [
         {
           name: "TENT",
-          href: "/tent",
+          href: "/items/tent",
         },
         {
           name: "SHELTER",
-          href: "/shelter",
+          href: "/items/shelter",
         },
         {
           name: "SLEEPINGBAG",
-          href: "/sleepingbag",
+          href: "/items/sleepingbag",
         },
         {
           name: "TABLE",
-          href: "/table",
+          href: "/items/table",
         },
         {
           name: "STOVE",
-          href: "/stove",
+          href: "/items/stove",
         },
         {
           name: "LANTERN",
-          href: "/lantern",
+          href: "/items/lantern",
         },
         {
           name: "ETC",
-          href: "/etc",
+          href: "/items/etc",
         },
       ],
     };

@@ -2,8 +2,9 @@
   <div
     class="card"
     style="width: 20rem"
-    v-for="(item, id) in products.tent"
+    v-for="(item, id) in items.tent"
     :key="id"
+    @click="goToDetail()"
   >
     <img src="../assets/img/tent/tent1.png" class="card-img-top" alt="tent" />
     <div class="card-body">
@@ -24,22 +25,23 @@
 export default {
   data() {
     return {
-      products: {
+      items: {
         tent: [],
+        stove: [],
       },
     };
   },
   created() {
-    this.fetchProducts();
+    this.fetchItems();
   },
   methods: {
-    async fetchProducts() {
-      const result = await import(`~/public/data/products.json`);
-      const { tent } = result.default;
-      this.products = { tent };
+    async fetchItems() {
+      const result = await import(`~/public/data/items.json`);
+      const { tent, stove } = result.default;
+      this.items = { tent, stove };
       console.log(tent);
     },
-
+    goToDetail() {},
     addItem() {},
   },
 };
@@ -47,6 +49,7 @@ export default {
 <style lang="scss" scoped>
 .card {
   margin: 0 10px 0 10px;
+  cursor: pointer;
 }
 .card-body {
   display: flex;

@@ -1,62 +1,62 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import Signin from './Signin'
-import Mypage from './Mypage'
-import NotFound from './NotFound'
-import Main from './Main'
-import Tent from './items/Tent'
-import Shelter from './items/Shelter'
-import SleepingBag from './items/SleepingBag'
-import Table from './items/Table'
-import Stove from './items/Stove'
-import Lantern from './items/Lantern'
-import Etc from './items/etc'
+import { createRouter, createWebHashHistory } from "vue-router";
+import Signin from "./Signin";
+import Mypage from "./Mypage";
+import NotFound from "./NotFound";
+import Main from "./Main";
+import Tent from "./items/Tent";
+import Shelter from "./items/Shelter";
+import SleepingBag from "./items/SleepingBag";
+import Table from "./items/Table";
+import Stove from "./items/Stove";
+import Lantern from "./items/Lantern";
+import Etc from "./items/etc";
 
 export default createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      path: '/',
+      path: "/",
       component: Signin,
     },
     {
-      path: '/main',
+      path: "/main",
       component: Main,
     },
     {
-      path: '/mypage',
+      path: "/mypage",
       component: Mypage,
     },
     {
-      path: '/tent',
+      path: "/items/tent",
       component: Tent,
     },
     {
-      path: '/shelter',
+      path: "/items/shelter",
       component: Shelter,
-      },
+    },
     {
-      path: '/sleepingbag',
+      path: "/items/sleepingbag",
       component: SleepingBag,
-      },
+    },
     {
-      path: '/table',
+      path: "/items/table",
       component: Table,
-      },
+    },
     {
-      path: '/stove',
+      path: "/items/stove",
       component: Stove,
-      },
+    },
     {
-      path: '/lantern',
+      path: "/items/lantern",
       component: Lantern,
-      },
+    },
     {
-      path: '/etc',
+      path: "/items/etc",
       component: Etc,
     },
     {
-      path: '/:notfound(.*)' ,
+      path: "/:notfound(.*)",
       component: NotFound,
     },
-  ]
-})
+  ],
+});
