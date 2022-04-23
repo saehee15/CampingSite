@@ -1,10 +1,10 @@
 <template>
-  <div
+  <RouterLink
     class="card"
     style="width: 20rem"
     v-for="(item, id) in items.tent"
     :key="id"
-    @click="goToDetail()"
+    :to="`/items/tent/${item.id}`"
   >
     <img src="../assets/img/tent/tent1.png" class="card-img-top" alt="tent" />
     <div class="card-body">
@@ -19,12 +19,14 @@
         </button>
       </div>
     </div>
-  </div>
+  </RouterLink>
 </template>
 <script>
 export default {
   data() {
     return {
+      isAddItem: false,
+      isRow4: false,
       items: {
         tent: [],
         stove: [],
@@ -39,10 +41,10 @@ export default {
       const result = await import(`~/public/data/items.json`);
       const { tent, stove } = result.default;
       this.items = { tent, stove };
-      console.log(tent);
     },
-    goToDetail() {},
-    addItem() {},
+    addItem() {
+      this.isAddItem = true;
+    },
   },
 };
 </script>
@@ -50,6 +52,9 @@ export default {
 .card {
   margin: 0 10px 0 10px;
   cursor: pointer;
+  color: black;
+  text-decoration-line: none !important;
+  flex-wrap: wrap;
 }
 .card-body {
   display: flex;

@@ -8,8 +8,11 @@
 </template>
 <style lang="scss" scoped>
 footer {
-  height: 100px;
   width: 100%;
+  height: 100px;
+  position: relative;
+  transform: translateY(-100%);
+
   p {
     margin: 0 100px 0 100px;
     color: rgba(0, 0, 0, 0.55);

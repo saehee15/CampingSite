@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <Items />
-    <Order />
+    <Order :class="{ isAddItem: isAddItem }" />
   </div>
 </template>
 <script>
@@ -12,12 +12,17 @@ export default {
     Items,
     Order,
   },
+  data() {
+    return {
+      isAddItem: true,
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>
 .section {
   display: flex;
   justify-content: center;
-  margin: 30px 0px 30px 0;
+  margin: 30px 50px 30px 50px;
 }
 </style>

@@ -10,6 +10,7 @@ import Table from "./items/Table";
 import Stove from "./items/Stove";
 import Lantern from "./items/Lantern";
 import Etc from "./items/etc";
+import Detail from "./Detail";
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -53,6 +54,10 @@ export default createRouter({
     {
       path: "/items/etc",
       component: Etc,
+    },
+    {
+      path: "/items/tent/:id",
+      component: Detail,
     },
     {
       path: "/:notfound(.*)",

@@ -2,17 +2,17 @@
   <!-- todo -->
   <!-- items 뒤에 모든 문자 일치하여 items, Order 컴터넌트 뿌려주기 -->
   <Header v-if="$route.path !== '/'" />
-  <div v-if="$route.path === '/items/stove'">
+  <div class="content" v-if="$route.path === '/items/stove'">
     <RouterView>
       <Items />
       <Order />
     </RouterView>
   </div>
-  <div v-else>
+  <div class="content" v-else>
     <RouterView />
   </div>
 
-  <Footer v-if="$route.path !== '/'" />
+  <Footer class="footer" v-if="$route.path !== '/'" />
 </template>
 
 <script>
@@ -31,4 +31,8 @@ export default {
 </script>
 <style lang="scss">
 @import "~/scss/main.scss";
+.content {
+  height: 100%;
+  padding-bottom: 100px;
+}
 </style>
